@@ -1,0 +1,1373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#07111f">
+
+<title>Happy Teachers' Day | Indus School System</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap');
+
+:root{
+    --gold:#f7c873;
+    --gold2:#ffe7a3;
+    --blue:#72d8ff;
+    --white:#f8fbff;
+    --muted:#aebed1;
+    --glass:rgba(255,255,255,.075);
+    --border:rgba(255,255,255,.14);
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    background:
+        radial-gradient(circle at 10% 10%,rgba(72,190,255,.14),transparent 30%),
+        radial-gradient(circle at 90% 80%,rgba(247,200,115,.12),transparent 30%),
+        #050b14;
+    color:var(--white);
+    font-family:"DM Sans",sans-serif;
+    overflow-x:hidden;
+}
+
+/* =====================================================
+   BACKGROUND
+===================================================== */
+
+#stars{
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+}
+
+.star{
+    position:absolute;
+    width:2px;
+    height:2px;
+    background:white;
+    border-radius:50%;
+    opacity:.5;
+    animation:twinkle 3s infinite alternate;
+}
+
+@keyframes twinkle{
+    from{opacity:.15;transform:scale(.7)}
+    to{opacity:.9;transform:scale(1.5)}
+}
+
+.glow{
+    position:fixed;
+    width:350px;
+    height:350px;
+    border-radius:50%;
+    filter:blur(100px);
+    opacity:.14;
+    pointer-events:none;
+    z-index:0;
+}
+
+.glow.one{
+    background:#20b9ff;
+    left:-150px;
+    top:10%;
+}
+
+.glow.two{
+    background:#f5b942;
+    right:-150px;
+    bottom:10%;
+}
+
+/* =====================================================
+   NAV
+===================================================== */
+
+.nav{
+    position:fixed;
+    top:18px;
+    left:50%;
+    transform:translateX(-50%);
+    width:min(92%,850px);
+    padding:12px 18px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    border:1px solid var(--border);
+    background:rgba(5,11,20,.65);
+    backdrop-filter:blur(18px);
+    border-radius:50px;
+    z-index:100;
+    box-shadow:0 10px 40px rgba(0,0,0,.25);
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:9px;
+    font-size:13px;
+    font-weight:700;
+}
+
+.logo span{
+    color:var(--gold);
+}
+
+.nav button{
+    border:1px solid rgba(247,200,115,.35);
+    background:rgba(247,200,115,.08);
+    color:var(--gold2);
+    padding:8px 15px;
+    border-radius:30px;
+    cursor:pointer;
+}
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero{
+    position:relative;
+    z-index:2;
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    padding:100px 20px 70px;
+}
+
+.hero-content{
+    max-width:850px;
+}
+
+.badge{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 16px;
+    border:1px solid rgba(247,200,115,.3);
+    background:rgba(247,200,115,.07);
+    color:var(--gold2);
+    border-radius:50px;
+    font-size:12px;
+    letter-spacing:1.5px;
+    text-transform:uppercase;
+    animation:fadeUp 1s ease both;
+}
+
+.badge i{
+    width:7px;
+    height:7px;
+    border-radius:50%;
+    background:#6cffad;
+    box-shadow:0 0 12px #6cffad;
+}
+
+.graduation{
+    font-size:72px;
+    margin:25px 0 5px;
+    display:inline-block;
+    filter:drop-shadow(0 0 25px rgba(247,200,115,.25));
+    animation:float 3s ease-in-out infinite;
+}
+
+@keyframes float{
+    0%,100%{transform:translateY(0) rotate(-2deg)}
+    50%{transform:translateY(-13px) rotate(2deg)}
+}
+
+.hero h1{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(46px,10vw,92px);
+    line-height:.98;
+    letter-spacing:-3px;
+    margin:10px 0 20px;
+    background:linear-gradient(
+        100deg,
+        #fff,
+        #ffe7a3,
+        #f7c873,
+        #fff
+    );
+    background-size:250% auto;
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    animation:goldShine 5s linear infinite;
+}
+
+@keyframes goldShine{
+    to{background-position:250% center}
+}
+
+.school{
+    color:var(--blue);
+    font-size:clamp(15px,3vw,20px);
+    font-weight:600;
+    letter-spacing:.5px;
+}
+
+.location{
+    margin-top:7px;
+    color:var(--muted);
+    font-size:14px;
+}
+
+.hero-message{
+    max-width:650px;
+    margin:28px auto 0;
+    color:#c5d2df;
+    line-height:1.8;
+    font-size:16px;
+}
+
+.scroll{
+    margin-top:38px;
+    color:#72869c;
+    font-size:11px;
+    letter-spacing:3px;
+    text-transform:uppercase;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    50%{opacity:.4}
+}
+
+/* =====================================================
+   SECTIONS
+===================================================== */
+
+section{
+    position:relative;
+    z-index:2;
+    padding:90px 20px;
+}
+
+.section-wrap{
+    max-width:1050px;
+    margin:auto;
+}
+
+.section-heading{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.eyebrow{
+    color:var(--gold);
+    text-transform:uppercase;
+    letter-spacing:3px;
+    font-size:11px;
+    font-weight:700;
+}
+
+.section-heading h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(34px,7vw,54px);
+    margin-top:10px;
+}
+
+.section-heading p{
+    color:var(--muted);
+    max-width:600px;
+    margin:12px auto 0;
+    line-height:1.7;
+}
+
+/* =====================================================
+   PRINCIPAL
+===================================================== */
+
+.principal-card{
+    position:relative;
+    overflow:hidden;
+    padding:45px 30px;
+    border-radius:30px;
+    background:
+        linear-gradient(135deg,
+        rgba(247,200,115,.12),
+        rgba(255,255,255,.045));
+    border:1px solid rgba(247,200,115,.25);
+    text-align:center;
+    box-shadow:0 30px 80px rgba(0,0,0,.25);
+}
+
+.principal-card:before{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:rgba(247,200,115,.13);
+    border-radius:50%;
+    filter:blur(70px);
+    top:-120px;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.crown{
+    font-size:52px;
+    position:relative;
+}
+
+.principal-card h3{
+    position:relative;
+    margin-top:15px;
+    font-size:28px;
+}
+
+.principal-card .role{
+    color:var(--gold);
+    margin-top:7px;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.principal-card p{
+    position:relative;
+    max-width:600px;
+    margin:20px auto 0;
+    color:#c5d2df;
+    line-height:1.8;
+}
+
+/* =====================================================
+   TEACHER GRID
+===================================================== */
+
+.teacher-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.teacher-card{
+    position:relative;
+    overflow:hidden;
+    padding:25px;
+    border-radius:22px;
+    background:var(--glass);
+    border:1px solid var(--border);
+    transition:.45s cubic-bezier(.2,.8,.2,1);
+}
+
+.teacher-card:before{
+    content:"";
+    position:absolute;
+    width:100px;
+    height:100px;
+    right:-40px;
+    top:-40px;
+    border-radius:50%;
+    background:rgba(114,216,255,.1);
+    filter:blur(25px);
+}
+
+.teacher-card:hover{
+    transform:translateY(-8px);
+    border-color:rgba(247,200,115,.4);
+    box-shadow:0 20px 45px rgba(0,0,0,.25);
+}
+
+.teacher-icon{
+    width:55px;
+    height:55px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:16px;
+    background:rgba(255,255,255,.07);
+    font-size:28px;
+    margin-bottom:18px;
+}
+
+.subject{
+    color:var(--blue);
+    font-size:11px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+    font-weight:700;
+}
+
+.teacher-card h3{
+    margin-top:7px;
+    font-size:20px;
+}
+
+.teacher-card p{
+    margin-top:7px;
+    color:#8193a6;
+    font-size:13px;
+}
+
+/* =====================================================
+   MESSAGE
+===================================================== */
+
+.message-section{
+    text-align:center;
+}
+
+.letter{
+    max-width:780px;
+    margin:auto;
+    padding:50px 30px;
+    border-radius:30px;
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.09),
+            rgba(255,255,255,.025)
+        );
+    border:1px solid var(--border);
+    box-shadow:0 30px 80px rgba(0,0,0,.25);
+}
+
+.quote{
+    font-size:50px;
+    color:var(--gold);
+    line-height:.5;
+}
+
+.letter p{
+    margin:25px auto;
+    color:#d0dbe6;
+    line-height:2;
+    font-size:16px;
+}
+
+.signature{
+    color:var(--gold2);
+    font-family:"Playfair Display",serif;
+    font-size:26px;
+}
+
+/* =====================================================
+   APPRECIATION
+===================================================== */
+
+.appreciation{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.app-box{
+    text-align:center;
+    padding:28px 18px;
+    border:1px solid var(--border);
+    background:rgba(255,255,255,.04);
+    border-radius:22px;
+}
+
+.app-box div{
+    font-size:34px;
+    margin-bottom:12px;
+}
+
+.app-box h3{
+    font-size:16px;
+}
+
+.app-box p{
+    color:#7f91a4;
+    font-size:12px;
+    margin-top:7px;
+    line-height:1.5;
+}
+
+/* =====================================================
+   FINAL
+===================================================== */
+
+.final{
+    min-height:80vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.final-content{
+    max-width:800px;
+}
+
+.final-cap{
+    font-size:75px;
+    animation:float 3s infinite;
+}
+
+.final h2{
+    font-family:"Playfair Display",serif;
+    font-size:clamp(40px,8vw,70px);
+    margin:20px 0;
+}
+
+.final h2 span{
+    color:var(--gold);
+}
+
+.final p{
+    color:var(--muted);
+    line-height:1.8;
+}
+
+.creator{
+    margin-top:30px;
+    color:#fff;
+    font-size:18px;
+}
+
+.creator strong{
+    color:var(--gold);
+}
+
+.celebrate{
+    margin-top:30px;
+    border:0;
+    padding:15px 25px;
+    border-radius:50px;
+    background:linear-gradient(100deg,#f7c873,#ffe7a3);
+    color:#111923;
+    font-weight:800;
+    font-size:15px;
+    cursor:pointer;
+    box-shadow:0 12px 35px rgba(247,200,115,.2);
+    transition:.3s;
+}
+
+.celebrate:hover{
+    transform:translateY(-3px) scale(1.04);
+}
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding:30px 20px 45px;
+    color:#617387;
+    font-size:12px;
+    border-top:1px solid rgba(255,255,255,.06);
+}
+
+footer span{
+    color:var(--gold);
+}
+
+/* =====================================================
+   PARTICLES
+===================================================== */
+
+.particle{
+    position:fixed;
+    pointer-events:none;
+    z-index:5;
+    animation:rise linear forwards;
+}
+
+@keyframes rise{
+    0%{
+        transform:translateY(105vh) rotate(0);
+        opacity:0;
+    }
+    10%{opacity:1}
+    100%{
+        transform:translateY(-15vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+/* CONFETTI */
+
+.confetti{
+    position:fixed;
+    z-index:999;
+    top:-20px;
+    width:8px;
+    height:14px;
+    pointer-events:none;
+    animation:fall linear forwards;
+}
+
+@keyframes fall{
+    to{
+        transform:translateY(110vh) rotate(900deg);
+    }
+}
+
+/* =====================================================
+   REVEAL ANIMATION
+===================================================== */
+
+.reveal{
+    opacity:0;
+    transform:translateY(35px);
+    transition:1s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:none;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width:650px){
+
+    .nav{
+        top:10px;
+        padding:10px 13px;
+    }
+
+    .logo{
+        font-size:11px;
+    }
+
+    .nav button{
+        padding:7px 11px;
+        font-size:11px;
+    }
+
+    .hero{
+        padding-top:110px;
+    }
+
+    .graduation{
+        font-size:58px;
+    }
+
+    .hero h1{
+        letter-spacing:-2px;
+    }
+
+    .teacher-grid{
+        grid-template-columns:1fr;
+    }
+
+    .appreciation{
+        grid-template-columns:1fr;
+    }
+
+    section{
+        padding:70px 16px;
+    }
+
+    .letter{
+        padding:40px 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div id="stars"></div>
+
+<div class="glow one"></div>
+<div class="glow two"></div>
+
+<!-- NAVIGATION -->
+<nav class="nav">
+    <div class="logo">
+        🎓 <span>Teachers' Day</span>
+    </div>
+
+    <button onclick="celebrate()">
+        Celebrate ✨
+    </button>
+</nav>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<header class="hero">
+
+    <div class="hero-content">
+
+        <div class="badge">
+            <i></i>
+            A Special Tribute
+        </div>
+
+        <div class="graduation">
+            🎓
+        </div>
+
+        <h1>
+            Happy<br>
+            Teachers' Day
+        </h1>
+
+        <div class="school">
+            Indus School System
+        </div>
+
+        <div class="location">
+            Higher Secondary Maroof Dahri
+        </div>
+
+        <p class="hero-message">
+            To the teachers who turn questions into knowledge,
+            mistakes into lessons, and students into dreamers.
+            Today, this tribute is dedicated to you.
+        </p>
+
+        <div class="scroll">
+            ↓ Meet our amazing teachers ↓
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =====================================================
+     PRINCIPAL
+===================================================== -->
+
+<section>
+
+<div class="section-wrap">
+
+    <div class="section-heading reveal">
+        <div class="eyebrow">Our Leadership</div>
+        <h2>A Guiding Light</h2>
+        <p>
+            Every great school has someone who leads with vision,
+            discipline and dedication.
+        </p>
+    </div>
+
+    <div class="principal-card reveal">
+
+        <div class="crown">👑</div>
+
+        <h3>Sir Saleem</h3>
+
+        <div class="role">
+            Principal Teacher
+        </div>
+
+        <p>
+            Thank you for leading our school with dedication,
+            supporting teachers, encouraging students and
+            creating an environment where learning can grow.
+        </p>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     TEACHERS
+===================================================== -->
+
+<section>
+
+<div class="section-wrap">
+
+    <div class="section-heading reveal">
+
+        <div class="eyebrow">
+            Our Mentors
+        </div>
+
+        <h2>Teachers Who Inspire</h2>
+
+        <p>
+            Behind every lesson is a teacher who gives their
+            time, knowledge and patience to make a difference.
+        </p>
+
+    </div>
+
+
+    <div class="teacher-grid">
+
+        <!-- PHYSICS -->
+        <div class="teacher-card reveal">
+
+            <div class="teacher-icon">
+                ⚛️
+            </div>
+
+            <div class="subject">
+                Physics
+            </div>
+
+            <h3>Sir Subhan</h3>
+
+            <p>
+                Turning curiosity into understanding.
+            </p>
+
+        </div>
+
+
+        <!-- BIO -->
+        <div class="teacher-card reveal">
+
+            <div class="teacher-icon">
+                🧬
+            </div>
+
+            <div class="subject">
+                Biology
+            </div>
+
+            <h3>Sir Taameer Hussain</h3>
+
+            <p>
+                Helping us understand the science of life.
+            </p>
+
+        </div>
+
+
+        <!-- CHEMISTRY -->
+        <div class="teacher-card reveal">
+
+            <div class="teacher-icon">
+                🧪
+            </div>
+
+            <div class="subject">
+                Chemistry
+            </div>
+
+            <h3>Sir Mohsin</h3>
+
+            <p>
+                Making every reaction a lesson.
+            </p>
+
+        </div>
+
+
+        <!-- COMPUTER -->
+        <div class="teacher-card reveal">
+
+            <div class="teacher-icon">
+                💻
+            </div>
+
+            <div class="subject">
+                Computer Science
+            </div>
+
+            <h3>Sir Aqib</h3>
+
+            <p>
+                Turning technology into opportunity.
+            </p>
+
+        </div>
+
+
+        <!-- ENGLISH -->
+        <div class="teacher-card reveal">
+
+            <div class="teacher-icon">
+                📖
+            </div>
+
+            <div class="subject">
+                English
+            </div>
+
+            <h3>Sir Imran</h3>
+
+            <p>
+                Giving words the power to express ideas.
+            </p>
+
+        </div>
+
+
+        <!-- MATH -->
+        <div class="teacher-card reveal">
+
+            <div class="teacher-icon">
+                ∑
+            </div>
+
+            <div class="subject">
+                Mathematics
+            </div>
+
+            <h3>Sir Abdul Rehman</h3>
+
+            <p>
+                Making numbers and logic meaningful.
+            </p>
+
+        </div>
+
+
+        <!-- URDU -->
+        <div class="teacher-card reveal">
+
+            <div class="teacher-icon">
+                ✒️
+            </div>
+
+            <div class="subject">
+                Urdu
+            </div>
+
+            <h3>Sir Mian Qaisar Khan</h3>
+
+            <p>
+                Keeping language, literature and expression alive.
+            </p>
+
+        </div>
+
+
+        <!-- SCHOOL -->
+        <div class="teacher-card reveal">
+
+            <div class="teacher-icon">
+                🏫
+            </div>
+
+            <div class="subject">
+                Our School
+            </div>
+
+            <h3>Indus School System</h3>
+
+            <p>
+                Higher Secondary Maroof Dahri.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     PERSONAL MESSAGE
+===================================================== -->
+
+<section class="message-section">
+
+<div class="section-wrap">
+
+    <div class="section-heading reveal">
+
+        <div class="eyebrow">
+            From The Heart
+        </div>
+
+        <h2>A Message of Gratitude</h2>
+
+    </div>
+
+
+    <div class="letter reveal">
+
+        <div class="quote">
+            “
+        </div>
+
+        <p>
+            Dear respected teachers,
+            <br><br>
+
+            Some lessons are written in books,
+            but the most important lessons are taught
+            through patience, kindness, discipline and example.
+            <br><br>
+
+            Thank you for standing in front of us every day,
+            sharing your knowledge, answering our questions,
+            correcting our mistakes and encouraging us to
+            become better than we were yesterday.
+            <br><br>
+
+            Your effort may not always be visible,
+            but its impact can stay with a student for life.
+            <br><br>
+
+            <strong>
+                May your dedication always be remembered
+                and your hard work always be appreciated.
+            </strong>
+        </p>
+
+        <div class="signature">
+            With Respect & Gratitude
+        </div>
+
+        <div class="creator">
+            — Ghulam Nabi
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     APPRECIATION
+===================================================== -->
+
+<section>
+
+<div class="section-wrap">
+
+    <div class="section-heading reveal">
+
+        <div class="eyebrow">
+            More Than A Teacher
+        </div>
+
+        <h2>What Teachers Give Us</h2>
+
+    </div>
+
+
+    <div class="appreciation">
+
+        <div class="app-box reveal">
+
+            <div>💡</div>
+
+            <h3>Knowledge</h3>
+
+            <p>
+                You open our minds to new ideas.
+            </p>
+
+        </div>
+
+
+        <div class="app-box reveal">
+
+            <div>🧭</div>
+
+            <h3>Guidance</h3>
+
+            <p>
+                You help us find the right direction.
+            </p>
+
+        </div>
+
+
+        <div class="app-box reveal">
+
+            <div>❤️</div>
+
+            <h3>Inspiration</h3>
+
+            <p>
+                You remind us that we can achieve more.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+<!-- =====================================================
+     FINAL
+===================================================== -->
+
+<section class="final">
+
+<div class="final-content reveal">
+
+    <div class="final-cap">
+        🎓
+    </div>
+
+    <div class="eyebrow">
+        A Tribute From A Student
+    </div>
+
+    <h2>
+        Thank You,<br>
+        <span>Dear Teachers.</span>
+    </h2>
+
+    <p>
+        Your words become knowledge.
+        Your guidance becomes confidence.
+        Your efforts become our future.
+    </p>
+
+    <div class="creator">
+        A special Teachers' Day tribute by
+        <strong>Ghulam Nabi</strong>
+    </div>
+
+    <button class="celebrate" onclick="celebrate()">
+        ✨ Send My Respect ✨
+    </button>
+
+</div>
+
+</section>
+
+
+<footer>
+
+    Made with ❤️ & respect for the teachers of
+    <span>Indus School System Higher Secondary Maroof Dahri</span>
+
+    <br><br>
+
+    © 2026 • A Teachers' Day Tribute by Ghulam Nabi
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   STAR FIELD
+===================================================== */
+
+const starContainer = document.getElementById("stars");
+
+for(let i = 0; i < 120; i++){
+
+    const star = document.createElement("div");
+
+    star.className = "star";
+
+    star.style.left = Math.random()*100 + "%";
+    star.style.top = Math.random()*100 + "%";
+
+    star.style.animationDelay =
+        Math.random()*4 + "s";
+
+    star.style.opacity =
+        .15 + Math.random()*.7;
+
+    starContainer.appendChild(star);
+}
+
+
+/* =====================================================
+   FLOATING PARTICLES
+===================================================== */
+
+const particles = [
+    "✨",
+    "⭐",
+    "🌟",
+    "💫",
+    "🌸",
+    "❤️",
+    "🎓",
+    "📚"
+];
+
+function createParticle(){
+
+    const p = document.createElement("div");
+
+    p.className = "particle";
+
+    p.textContent =
+        particles[
+            Math.floor(Math.random()*particles.length)
+        ];
+
+    p.style.left =
+        Math.random()*100 + "vw";
+
+    p.style.fontSize =
+        (12 + Math.random()*18) + "px";
+
+    p.style.animationDuration =
+        (6 + Math.random()*7) + "s";
+
+    document.body.appendChild(p);
+
+    setTimeout(()=>{
+        p.remove();
+    },14000);
+}
+
+setInterval(createParticle,700);
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+const observer =
+new IntersectionObserver(
+    entries => {
+
+        entries.forEach(entry => {
+
+            if(entry.isIntersecting){
+
+                entry.target.classList.add("visible");
+
+            }
+
+        });
+
+    },
+    {
+        threshold:.12
+    }
+);
+
+document
+.querySelectorAll(".reveal")
+.forEach(el => observer.observe(el));
+
+
+/* =====================================================
+   CONFETTI CELEBRATION
+===================================================== */
+
+function celebrate(){
+
+    const symbols = [
+        "✨",
+        "⭐",
+        "💛",
+        "🎓",
+        "🌟"
+    ];
+
+    for(let i=0;i<120;i++){
+
+        const c =
+            document.createElement("div");
+
+        c.className = "confetti";
+
+        c.style.left =
+            Math.random()*100 + "vw";
+
+        c.style.background =
+            `hsl(${Math.random()*360},90%,65%)`;
+
+        c.style.borderRadius =
+            Math.random()>.5 ? "50%" : "2px";
+
+        c.style.animationDuration =
+            (2 + Math.random()*3) + "s";
+
+        c.style.animationDelay =
+            Math.random()*1.5 + "s";
+
+        document.body.appendChild(c);
+
+        setTimeout(()=>{
+            c.remove();
+        },5500);
+    }
+
+    /* Extra floating message */
+
+    const message =
+        document.createElement("div");
+
+    message.textContent =
+        "❤️ Respect & Gratitude to Every Teacher ❤️";
+
+    message.style.position = "fixed";
+    message.style.left = "50%";
+    message.style.top = "50%";
+    message.style.transform =
+        "translate(-50%,-50%) scale(.7)";
+    message.style.zIndex = "1000";
+    message.style.padding = "18px 25px";
+    message.style.borderRadius = "50px";
+    message.style.background =
+        "rgba(5,11,20,.92)";
+    message.style.border =
+        "1px solid rgba(247,200,115,.5)";
+    message.style.color = "#ffe7a3";
+    message.style.fontWeight = "700";
+    message.style.textAlign = "center";
+    message.style.boxShadow =
+        "0 20px 60px rgba(0,0,0,.5)";
+    message.style.transition =
+        "all .5s ease";
+
+    document.body.appendChild(message);
+
+    requestAnimationFrame(()=>{
+        message.style.transform =
+            "translate(-50%,-50%) scale(1)";
+    });
+
+    setTimeout(()=>{
+        message.style.opacity = "0";
+        message.style.transform =
+            "translate(-50%,-50%) scale(1.1)";
+    },2200);
+
+    setTimeout(()=>{
+        message.remove();
+    },2800);
+}
+
+
+/* =====================================================
+   OPENING PARTICLES
+===================================================== */
+
+window.addEventListener("load",()=>{
+
+    for(let i=0;i<30;i++){
+
+        setTimeout(
+            createParticle,
+            i*100
+        );
+
+    }
+
+});
+
+</script>
+
+</body>
+</html>
